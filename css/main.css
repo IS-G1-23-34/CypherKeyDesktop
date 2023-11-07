@@ -1,0 +1,27 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+:root {
+    --bg: #e1e7f3;
+}
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mx-background-top-linear-light {
+    background: -webkit-linear-gradient(45deg, var(--bg) 48%, #486f9a 48%);
+}
+
+.landing {
+    background-image: linear-gradient(to bottom, var(--bg) 50%, rgba(0,0,0,0) 100%);
+}
