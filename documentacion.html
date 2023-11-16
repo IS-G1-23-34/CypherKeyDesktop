@@ -1,0 +1,269 @@
+<!DOCTYPE html style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>CypherKey</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column vh-100">
+<div class="container-fluid container-fluid flex-grow-1">
+    <div class="row h-100">
+        <nav class="col-md-2 d-none d-md-block bg-body-tertiary sidebar sidebar-sticky sticky-top" style="height: 100vh">
+            <div style="height: 90%">
+                <div class="m-4 d-flex justify-content-center">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="logo" height="70" class="d-inline-block align-text-top">
+                    </a>
+                </div>
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="bi bi-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="generacion.html">
+                                <i class="bi bi-input-cursor-text"></i>
+                                Generar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="comprobacion.html">
+                                <i class="bi bi-spellcheck"></i>
+                                Comprobar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="documentacion.html">
+                                <i class="bi bi-book"></i>
+                                Documentación
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-self-end">
+                <a class="btn " href="https://github.com/IS-G1-23-34/CypherKey"><i style="font-size: 1.2rem;" class="bi bi-github"></i></a>
+                <a class="btn" href="mailto:cypherkey@cypherkey.com"><i style="font-size: 1.2rem;" class="bi bi-envelope-at-fill"></i></a>
+                <button class="btn" onclick="switchTheme()"><i style="font-size: 1.2rem;" class="bi bi-circle-half "></i></button>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <section>
+                <div class="container mt-5 card landing bg-transparent"><div class="card-body">
+                    <div class="jumbotron">
+                        <div class="container col-md-8">
+
+                            <h1 class="display-2 fw-bold" >Documentación</h1>
+                            <div class="container">
+                                <h4 class="display-9 fw-semibold" >Introducción</h4>
+                                <div class="container">
+                                    <p>La seguridad de las contraseñas es fundamental para proteger la información personal y garantizar la integridad de cuentas en línea. Este documento proporciona una guía exhaustiva sobre las mejores prácticas para crear contraseñas seguras y protegerlas contra posibles amenazas.</p>
+                                    <p>
+                                        <button class="btn btn-outline-secondary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="collapse1_1 collapse1_2 collapse2_1 collapse2_2 collapse2_3 collapse4_1 collapse4_2 collapse5_1 collapse5_2 collapse6">Ver Todo</button>
+                                        <a class="btn btn-outline-info btn-lg" role="button" href="https://support.microsoft.com/es-es/windows/crear-y-usar-contraseñas-seguras-c5cebb49-8c53-4f5e-2bc4-fe357ca048eb" target="_blank">Aprende más »</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+                <main>
+                    <div class="container py-md-5">
+                        <div class="mt-4"></div>
+                        <hr>
+                        <div class="mt-4"></div>
+                        <div class="container">
+                            <!-- Example row of columns -->
+                            <div class="row">
+                                <div class="col-sm-4 mt-4">
+                                    <div class="card bg-transparent">
+                                        <div class="card-body">
+                                            <h5 class="card-title">I. Fundamentos de Contraseñas Seguras</h5>
+                                            <p>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="false" aria-controls="collapse1_1">I.I. Longitud</button>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="false" aria-controls="collapse1_2">I.II. Complejidad</button>
+                                            </p>
+                                            <div class="row">
+                                                <div class="collapse multi-collapse multi-collaps" id="collapse1_1">
+                                                    <div class="card card-body mt-1">
+                                                        <p>I.I. Longitud</p>
+                                                        <p><b>Recomendación:</b> Utilizar contraseñas con al menos 12 caracteres.</p>
+                                                        <p><b>Razón:</b> Contraseñas más largas ofrecen una mayor resistencia a los ataques de fuerza bruta.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse multi-collapse" id="collapse1_2">
+                                                    <div class="card card-body mt-1">
+                                                        <p>I.II. Complejidad</p>
+                                                        <p><b>Recomendación:</b> Incluir una combinación de letras (mayúsculas y minúsculas), números y caracteres especiales.</p>
+                                                        <p><b>Razón:</b> La complejidad dificulta los ataques de diccionario y fuerza bruta.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 mt-4">
+                                    <div class="card bg-transparent">
+                                        <div class="card-body">
+                                            <h5 class="card-title">II. Mejores Prácticas para Crear Contraseñas</h5>
+                                            <p>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="false" aria-controls="collapse2_1">II.I. Evitar Información Personal</button>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="false" aria-controls="collapse2_2">II.II. No Utilizar Palabras Comunes</button>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="false" aria-controls="collapse2_3">II.III. Cambios Frecuentes</button>
+                                            </p>
+                                            <div class="row">
+                                                <div class="collapse multi-collapse" id="collapse2_1">
+                                                    <div class="card card-body mt-1">
+                                                        <p>II.I. Evitar Información Personal</p>
+                                                        <p><b>Recomendación:</b> Evitar el uso de nombres, fechas de nacimiento, direcciones u otra información personal fácilmente disponible.</p>
+                                                        <p><b>Razón:</b> La información personal es fácilmente deducible y aumenta el riesgo de acceso no autorizado.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse multi-collapse" id="collapse2_2">
+                                                    <div class="card card-body mt-1">
+                                                        <p>II.II. No Utilizar Palabras Comunes</p>
+                                                        <p><b>Recomendación:</b> Evitar palabras comunes y combinaciones predecibles.</p>
+                                                        <p><b>Razón:</b> Las palabras comunes son vulnerables a ataques de diccionario.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse multi-collapse" id="collapse2_3">
+                                                    <div class="card card-body mt-1">
+                                                        <p>II.III. Cambios Frecuentes</p>
+                                                        <p><b>Recomendación:</b> Cambiar las contraseñas regularmente, al menos cada 3 meses.</p>
+                                                        <p><b>Razón:</b> Cambiar las contraseñas reduce el riesgo de compromiso a largo plazo.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 mt-4">
+                                    <div class="card bg-transparent">
+                                        <div class="card-body">
+                                            <h5 class="card-title">III. Gestión de Contraseñas</h5>
+                                            <p>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="false" aria-controls="collapse3_1">III.I. Administradores de Contraseñas</button>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="false" aria-controls="collapse3_2">III.II. Autenticación de Doble Factor</button>
+                                            </p>
+                                            <div class="row">
+                                                <div class="collapse multi-collapse" id="collapse3_1">
+                                                    <div class="card card-body mt-1">
+                                                        <p>III.I. Uso de Administradores de Contraseñas</p>
+                                                        <p><b>Recomendación:</b> Emplear un administrador de contraseñas confiable para generar, almacenar y gestionar contraseñas de manera segura.</p>
+                                                        <p><b>Razón:</b> Los administradores de contraseñas facilitan el uso de contraseñas complejas y únicas para cada cuenta.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse multi-collapse" id="collapse3_2">
+                                                    <div class="card card-body mt-1">
+                                                        <p>III.II. Autenticación de Doble Factor (2FA)</p>
+                                                        <p><b>Recomendación:</b> Habilitar la autenticación de doble factor siempre que sea posible.</p>
+                                                        <p><b>Razón:</b> La 2FA añade una capa adicional de seguridad, incluso si la contraseña se ve comprometida.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 mt-4">
+                                    <div class="card bg-transparent">
+                                        <div class="card-body">
+                                            <h5 class="card-title">IV. Educación y Concienciación</h5>
+                                            <p>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="false" aria-controls="collapse4_1">IV.I. Capacitación del Usuario</button>
+                                            </p>
+                                            <div class="row">
+                                                <div class="collapse multi-collapse" id="collapse4_1">
+                                                    <div class="card card-body mt-1">
+                                                        <p>IV.I. Capacitación del Usuario</p>
+                                                        <p><b>Recomendación:</b> Proporcionar entrenamiento regular sobre seguridad informática y la importancia de contraseñas seguras.</p>
+                                                        <p><b>Razón:</b> Los usuarios informados son menos propensos a caer en prácticas de seguridad deficientes.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 mt-4">
+                                    <div class="card bg-transparent">
+                                        <div class="card-body">
+                                            <h5 class="card-title">V. Consideraciones Técnicas</h5>
+                                            <p>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="false" aria-controls="collapse5_1">V.I. Algoritmos de Hashing Seguros</button>
+                                            </p>
+                                            <div class="row">
+                                                <div class="collapse multi-collapse" id="collapse5_1">
+                                                    <div class="card card-body mt-1">
+                                                        <p>V.I. Algoritmos de Hashing Seguros</p>
+                                                        <p><b>Recomendación:</b> Utilizar algoritmos de hashing seguros para almacenar contraseñas.</p>
+                                                        <p><b>Razón:</b> Los algoritmos de hashing protegen las contraseñas almacenadas contra ataques de lectura no autorizada.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse multi-collapse" id="collapse5_2">
+                                                    <div class="card card-body mt-1">
+                                                        <p>V.II. Políticas de Bloqueo de Cuentas</p>
+                                                        <p><b>Recomendación:</b> Implementar políticas de bloqueo de cuentas después de un número específico de intentos fallidos.</p>
+                                                        <p><b>Razón:</b> Esto mitiga los riesgos asociados con ataques de fuerza bruta.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 mt-4" >
+                                    <div class="card bg-transparent">
+                                        <div class="card-body">
+                                            <h5 class="card-title">VI. Síntesis</h5>
+                                            <p>
+                                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">Síntesis</button>
+                                            </p>
+                                            <div class="row">
+                                                <div class="collapse multi-collapse" id="collapse6">
+                                                    <div class="card card-body mt-1">
+                                                        <p>La seguridad de las contraseñas es esencial en la era digital actual. Al seguir las mejores prácticas delineadas en este documento, se puede fortalecer significativamente la protección de las cuentas y la información personal. La combinación de contraseñas sólidas, prácticas de gestión eficientes y concienciación del usuario contribuirá a un entorno más seguro en línea.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- /container -->
+                </main>
+
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="js/particles.js"></script>
+<div id="particles-js"></div>
+<script src="js/theme.js"></script>
+<script src="js/comprobacion.js"></script>
+
+
+</body>
+</html>
+
+
+
+<section>
+    <div class="container mt-6">
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="js/particles.js"></script>
+<div id="particles-js"></div>
+<script src="js/theme.js"></script>
+</body>
+</html>

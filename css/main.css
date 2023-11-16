@@ -18,10 +18,11 @@ body {
     background-size: cover;
 }
 
-.mx-background-top-linear-light {
-    background: -webkit-linear-gradient(45deg, var(--bg) 48%, #486f9a 48%);
-}
-
 .landing {
     background-image: linear-gradient(to bottom, var(--bg) 50%, rgba(0,0,0,0) 100%);
+}
+
+.titleBar  {
+    -webkit-app-select: none;
+    -webkit-app-region: drag;
 }

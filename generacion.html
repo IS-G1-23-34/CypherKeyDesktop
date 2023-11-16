@@ -1,58 +1,183 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head id="head"></head>
-<body>
-<nav id="navbar"></nav>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body ">
-                    <h2 class="card-title text-center">Generador de Contraseñas</h2>
-                    <div class="mt-4">
-                        <div class="form-group text-center">
-                            <label for="passwordLength">Longitud de la Contraseña:</label>
-                            <select id="passwordLength">
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <div class="form-group text-center">
-                            <div id="password" class="text-black bg-light  p-3 mb-3"> Haga clic en el botón para generar una contraseña. </div>
-                        </div>
-                    </div>
-                    <div class="form-group text-center">
-                        <div id="copyMessage" style="display: none;">¡Copiado!</div>
-                    </div>
-                    <div class="mt-4">
-                        <div class="form-group text-center">
-                            <button id="generate" class="btn btn-primary">Generar</button>
+<!DOCTYPE html style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>CypherKey</title>
 
-                            <img id="copyButton" src="img/copy.png" alt="Copiar" style="cursor: pointer; width: 65px; height: 50px;">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column vh-100">
+<div class="container-fluid container-fluid flex-grow-1">
+    <div class="row h-100">
+        <nav class="col-md-2 d-none d-md-block bg-body-tertiary sidebar sidebar-sticky sticky-top" style="height: 100vh">
+            <div style="height: 90%">
+                <div class="m-4 d-flex justify-content-center">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="logo" height="70" class="d-inline-block align-text-top">
+                    </a>
+                </div>
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="bi bi-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="generacion.html">
+                                <i class="bi bi-input-cursor-text"></i>
+                                Generar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="comprobacion.html">
+                                <i class="bi bi-spellcheck"></i>
+                                Comprobar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="documentacion.html">
+                                <i class="bi bi-book"></i>
+                                Documentación
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-self-end">
+                <a class="btn " href="https://github.com/IS-G1-23-34/CypherKey"><i style="font-size: 1.2rem;" class="bi bi-github"></i></a>
+                <a class="btn" href="mailto:cypherkey@cypherkey.com"><i style="font-size: 1.2rem;" class="bi bi-envelope-at-fill"></i></a>
+                <button class="btn" onclick="switchTheme()"><i style="font-size: 1.2rem;" class="bi bi-circle-half "></i></button>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="container mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body ">
+                                <h2 class="card-title text-center">Generador de Contraseñas</h2>
+                                <div class="mt-4">
+                                </div>
+                                <fieldset class="form-group">
+                                    <div class="row mb-1">
+                                        <label for="selectNumero" class="col-sm-3 col-form-label">Longitud</label>
+                                        <div class="col-sm-6 form-outline">
+                                            <div>
+                                                <input class="form-control" type="number" id="selectNumero" name="length" min="1" max="30" value="14" oninput="updateNumber(this.value)">
+                                                <label for="slider"></label><input type="range" class="form-range" id="slider" name="slider" min="1" max="30" value="14" oninput="updateSlider(this.value)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <div class="row mb-1">
+                                        <legend class="col-form-label col-sm-3 pt-0">Ajustes</legend>
+                                        <div class="col-sm-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="checkmin" name="minusculas" onclick="return validarUltimaCheckbox()" checked>
+                                                <label class="form-check-label" for="checkmin">
+                                                    Minúsculas
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="checkmay" name="mayusculas" onclick="return validarUltimaCheckbox()" checked>
+                                                <label class="form-check-label" for="checkmay">
+                                                    Mayúsculas
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="checknum" name="numeros" onclick="return validarUltimaCheckbox()" checked>
+                                                <label class="form-check-label" for="checknum">
+                                                    Números
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="checkspe" name="specialChars" onclick="return validarUltimaCheckbox()" checked>
+                                                <label class="form-check-label" for="checkspe">
+                                                    Carácteres Especiales
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <div class="row mb-1">
+                                        <legend class="col-form-label col-sm-3 pt-0">Formatos</legend>
+                                        <div id="opciones" class="col-sm-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option" id="optpersonalizado" value="personalizado" onclick="selectOption('personalizado')">
+                                                <label class="form-check-label" for="optpersonalizado">
+                                                    Personalizada
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option" id="optrecomendada" value="recomendada" onclick="selectOption('recomendado')" checked>
+                                                <label class="form-check-label" for="optrecomendada">
+                                                    Recomendada
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option" id="optlegible" value="legible" onclick="selectOption('legible')">
+                                                <label class="form-check-label" for="optlegible">
+                                                    Sencilla y Segura
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option" id="optpin" value="pin" onclick="selectOption('pin')">
+                                                <label class="form-check-label" for="optpin">
+                                                    Pin
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="mt-4">
+                                    <div class="form-group text-center">
+                                        <div id="password" class="text-center p-3 mb-3"> Pulse generar para obtener una contraseña. </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="form-group text-center">
+                                        <button onclick="generarPost()" class="btn btn-primary" >Generar</button>
 
-                    </div>
+                                        <i id="copyButton" style="cursor: pointer; height: 36px; margin-left: 10px;" class="bi bi-copy"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+
+            <div class="toast-container position-fixed top-0 start-0 ms-3 mt-3" role="alert" aria-live="assertive" aria-atomic="true" style="display: none" id="alertaNoCasillasActivas">
+                <div class="toast-header">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>NO!</strong> No puedes desactivar más casillas
+                    </div>
+                </div>
+            </div>
+            <div class="toast-container position-fixed top-0 start-0 ms-3 mt-3" role="alert" aria-live="assertive" aria-atomic="true" style="display: none" id="alertaUnder8">
+                <div class="alert alert-warning" role="alert">
+                    <strong>AVISO!</strong> No es recomendable una longitud menor a 8
+                </div>
+            </div>
+            <div class="toast-container position-fixed top-0 start-0 ms-3 mt-3" role="alert" aria-live="assertive" aria-atomic="true" style="display: none" id="copyMessage">
+                <div class="alert alert-info" role="alert">
+                    <strong>COPIADO AL PORTAPAPELES!</strong>
+                </div>
+            </div>
+        </main>
     </div>
 </div>
-
-
-
-<script src="js/generator.js"></script>
-<footer id="footer"></footer>
-<script src="renderer.js"></script>
+</body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="js/particles.js"></script>
 <div id="particles-js"></div>
 <script src="js/theme.js"></script>
-</body>
+<script src="js/generator.js"></script>
 </html>
