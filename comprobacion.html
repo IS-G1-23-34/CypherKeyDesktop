@@ -66,7 +66,10 @@
                                     <form action="/comprobacion" method="post">
                                         <div class="mt-4">
                                             <div class="form-group">
-                                                <input type="password" name="cadena" class="form-control" id="cadena" aria-describedby="passwordHelp" placeholder="Introduzca una contraseña">
+                                                <p class="text-center">
+                                                    <input type="password" name="cadena" class="form-control w-75 d-inline" id="cadena" aria-describedby="passwordHelp" placeholder="Introduzca una contraseña">
+                                                    <img id="eye" class="d-inline" onclick="eyeController()" src="img/ojoCerrado.png" style="cursor: pointer; height: 40px">
+                                                </p>
                                                 <small id="passwordHelp" class="form-text text-muted">Tu contraseña no será compartida con nadie.</small>
                                             </div>
                                         </div>
@@ -118,7 +121,36 @@
 <div id="particles-js"></div>
 <script src="js/theme.js"></script>
 <script src="js/comprobacion.js"></script>
+<script>
+    function eyeController(){
+        let x = document.getElementById("cadena")
+        let eye = document.getElementById("eye")
+        if (x.type === "password") {
+            x.type = "text";
+            eye.setAttribute("src","img/ojoAbierto.png")
+        } else {
+            x.type = "password";
+            eye.setAttribute("src","img/ojoCerrado.png")
+        }
+    }
 
+    let campoContrasena = document.getElementById('cadena');
+    let primeraVez = true
+    campoContrasena.addEventListener('click', function() {
+        if (primeraVez) {
+            this.select();
+            primeraVez = false;
+        }
+    });
+
+    // Agrega un evento para mostrar el cursor después de la selección
+    campoContrasena.addEventListener('blur', function() {
+        this.style.cursor = 'auto';
+        primeraVez = true;
+    });
+
+
+</script>
 
 </body>
 </html>
