@@ -46,7 +46,7 @@ function validarUltimaCheckbox() {
             casillasActivadas++;
         }
     });
-    if(casillasActivadas <= 0){
+    if(casillasActivadas <= 1){
         mostrarAlerta();
         return false;
     }
